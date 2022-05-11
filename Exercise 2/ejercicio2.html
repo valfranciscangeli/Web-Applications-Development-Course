@@ -1,0 +1,79 @@
+<!--Ejercicio 2: 
+    Trabajo realizado por Valeria Vallejos Franciscangeli 
+    Para el curso CC5002-1 Otoño 2022
+NOTA: se eliminaron atributos minlenght y maxlenght para realizar la validación con JS -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style-ejercicio2.css">
+
+    <script src="validar-ejercicio2.js"></script>
+
+    <title>AppsDrive</title>
+
+</head>
+
+<body>
+
+    <div>
+        <h1>AppsDrive</h1>
+    </div>
+
+    <div class="uploading-form">
+        
+        <form id="formulario" action="" method= "POST" onsubmit="return validar()" novalidate> 
+
+            <!--título de la cajita-->
+            <h2>¡Carga tu archivo!</h2> 
+            
+            <!-- NOMBRE del archivo a subir OBLIGATORIO-->
+            <label for="nombre">Nombre*:</label>
+            <input type="text" size="5" name="nombre" id="nombre" required><br><br>
+           
+            <!--botón para ESCOJER el archivo OBLIGATORIO-->
+            <label for="archivo">Archivo*:</label>
+            <input type="file" name="archivo" id="archivo" required><br><br>
+            
+            <!--PRIVACIDAD del archivo OBLIGATORIO-->
+            <label>Privacidad*:</label><br>
+            <input type="radio" name="privacidad" id="priv" value="1" required>
+            <label for="priv">Privado</label>
+            <input type="radio" name="privacidad" id="pub" value="0" required>
+            <label for="pub">Público</label><br><br>
+
+            <!--CONTRASEÑA del archivo-->
+            <label for="password">Contraseña:</label>
+            <input type="password" size="10" name="password" id="password" ><br><br>
+            
+            <label for="categoria">Categoría*:</label>
+            <select name="categoria" id="categoria" required>
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="1">Archivos de Ocio</option>
+                <option value="2">Archivos Educativos</option>
+                <option value="3">Archivos Personales</option>
+                <option value="4">Otros</option>
+            </select><br><br>
+
+            <!--caja de COMENTARIOS-->
+            <label for="comentarios">Comentarios:</label><br>
+            <textarea name="comentarios" placeholder="Escriba su comentario aquí" id="comentarios" cols="30" rows="3"></textarea><br><br>
+            
+            <!-- aviso de datos que son opcionales al usuario-->
+            <small> * Obligatorio. </small><br><br>
+
+            <!--botón para SUBIR el archivo OBLIGATORIO-->
+            <input type="submit" value="Upload">
+            
+        </form>
+
+    </div>
+    <div id="contenedorErrores" class="contenedor"></div>
+
+</body>
+
+</html>
